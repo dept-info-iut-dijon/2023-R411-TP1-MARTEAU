@@ -3,7 +3,7 @@ package com.example.tpmobile_marteauflorian;
 import com.example.tpmobile_marteauflorian.Exceptions.ExceptionPriority;
 import com.example.tpmobile_marteauflorian.Exceptions.ExceptionTitleVide;
 
-public class Task {
+public class Task  {
 
     private String title;
     private String description;
