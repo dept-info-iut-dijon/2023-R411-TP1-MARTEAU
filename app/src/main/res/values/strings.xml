@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TPMobile - MARTEAU Florian</string>
+    <string name="titre">Tâches à faire</string>
+    <string name="pasDeTri">Pas de tri</string>
+    <string name="triParTitre">Tri par titre</string>
+    <string name="triParImportance">Tri par importance</string>
+
+</resources>
