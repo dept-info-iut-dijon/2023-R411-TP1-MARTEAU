@@ -84,9 +84,6 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task{" +
-                "title='" + title + '\'' +
-                ", priority=" + priority +
-                '}';
+        return this.title + " " + this.priority;
     }
 }
