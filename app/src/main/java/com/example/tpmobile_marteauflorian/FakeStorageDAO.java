@@ -2,14 +2,20 @@ package com.example.tpmobile_marteauflorian;
 
 import android.app.Notification;
 
+import java.util.ArrayList;
+
 public class FakeStorageDAO implements IStorageTasks {
 
+    /**
+     * Liste de tâches temporaires
+     */
+    private ArrayList<Task> fakeTaches = new ArrayList<Task>();
 
-    @Override
-    public TaskList ReadTasks() {
-        TaskList liste = null;
+    /**
+     * Constructeur de la classe fakestorageDao
+     */
+    public FakeStorageDAO(){
         try{
-            liste = new TaskList();
             Task t1 = new Task();
             t1.setTitle("Manger");
             t1.setPriority(4);
@@ -20,13 +26,27 @@ public class FakeStorageDAO implements IStorageTasks {
             t2.setPriority(0);
             t2.setDescription("Il faut un peu dormir");
 
-            liste.AddTask(t1);
-            liste.AddTask(t2);
+            fakeTaches.add(t1);
+            fakeTaches.add(t2);
         }
         catch(Exception e){
 
         }
 
-        return liste;
+    }
+
+    @Override
+    public TaskList ReadTasks() {
+        return new TaskList(this.fakeTaches);
+    }
+
+    @Override
+    public void AddTask(Task task) {
+
+    }
+
+    @Override
+    public void UpdateTask(Task task) {
+
     }
 }

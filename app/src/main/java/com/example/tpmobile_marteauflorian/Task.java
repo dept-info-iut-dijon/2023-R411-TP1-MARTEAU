@@ -1,9 +1,13 @@
 package com.example.tpmobile_marteauflorian;
 
+import android.content.SharedPreferences;
+
 import com.example.tpmobile_marteauflorian.Exceptions.ExceptionPriority;
 import com.example.tpmobile_marteauflorian.Exceptions.ExceptionTitleVide;
 
-public class Task  {
+import java.io.Serializable;
+
+public class Task implements Serializable {
 
     private String title;
     private String description;
@@ -80,6 +84,7 @@ public class Task  {
         }
         this.title = title;
     }
+
 
 
     @Override

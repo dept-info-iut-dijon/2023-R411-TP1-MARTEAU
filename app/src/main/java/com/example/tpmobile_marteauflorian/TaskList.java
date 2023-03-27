@@ -27,8 +27,8 @@ public class TaskList {
     /**
      * Constructeur de la classe TaskList
      */
-    public TaskList(){
-        this.taches = new ArrayList<>();
+    public TaskList(ArrayList<Task> taches){
+        this.taches = taches;
     }
 
     /**
