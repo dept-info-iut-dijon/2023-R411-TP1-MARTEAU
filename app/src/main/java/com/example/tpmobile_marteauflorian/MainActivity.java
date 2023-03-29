@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity  {
                 Intent intent = new Intent(MainActivity.this, EditTaskActivity.class);
                 intent.putExtra("tache", taches.get(position));
                 intent.putExtra("position", position);
-                startActivity(intent);
+                startActivityForResult(intent,1);
             }
         });
 
@@ -88,6 +88,7 @@ public class MainActivity extends AppCompatActivity  {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        // CREATE
         if(resultCode==1)
         {
             Task t = (Task)data.getExtras().getSerializable("tache");
@@ -95,6 +96,7 @@ public class MainActivity extends AppCompatActivity  {
             adapter.add(t);
 
         }
+        // UPDATE
         else if (resultCode==2){
             Task t = (Task)data.getExtras().getSerializable("tache");
             this.storageDao.UpdateTask(t);
@@ -102,7 +104,7 @@ public class MainActivity extends AppCompatActivity  {
             int position = (int)data.getExtras().getSerializable("position");
             Task previousTask =this.adapter.getItem(position);
             this.adapter.remove(previousTask);
-            this.adapter.add(t);
+            this.adapter.insert(t,position);
         }
 
     }
