@@ -18,8 +18,9 @@ public interface IStorageTasks {
     /**
      * Permet de mettre à jour une tâche
      * @param task tâche à modifier
+     * @param int position de la tache
      */
-    public abstract void UpdateTask(Task task);
+    public abstract void UpdateTask(int position,Task task);
 
     /**
      * Permet de supprimer une tâche

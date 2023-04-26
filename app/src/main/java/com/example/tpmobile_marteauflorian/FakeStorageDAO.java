@@ -32,21 +32,23 @@ public class FakeStorageDAO implements IStorageTasks {
         catch(Exception e){
 
         }
-
     }
 
     @Override
-    public TaskList ReadTasks() {
+    public TaskList ReadTasks()
+    {
         return new TaskList(this.fakeTaches);
     }
 
     @Override
     public void AddTask(Task task) {
 
+
     }
 
     @Override
-    public void UpdateTask(Task task) {
+    public void UpdateTask(int position,Task task)
+    {
 
     }
 
