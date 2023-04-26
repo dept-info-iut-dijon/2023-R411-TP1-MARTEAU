@@ -73,4 +73,8 @@ public class StorageDao implements IStorageTasks {
         ed.putString("tasks",gson.toJson(tasks));
         ed.apply();
     }
+
+    public void setTasks(ArrayList<Task>  taches){
+        this.tasks.taches = taches;
+    }
 }

@@ -109,7 +109,7 @@ public class TaskAdapter extends ArrayAdapter<Task>
                 } else {
                     task.setCompleted(false);
                     holder.priority.setVisibility(View.VISIBLE);
-                    
+
                 }
 
                 // Mise à jour des données

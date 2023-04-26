@@ -1,5 +1,7 @@
 package com.example.tpmobile_marteauflorian;
 
+import java.util.ArrayList;
+
 public interface IStorageTasks {
 
     /**
@@ -27,4 +29,6 @@ public interface IStorageTasks {
      * @param task tâche à supprimer
      */
     public abstract void DeleteTask(Task task);
+
+    public abstract  void setTasks(ArrayList<Task> taches);
 }

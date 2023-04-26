@@ -56,4 +56,10 @@ public class FakeStorageDAO implements IStorageTasks {
     public void DeleteTask(Task task) {
 
     }
+
+
+    @Override
+    public  void setTasks(ArrayList<Task> taches){
+
+    }
 }

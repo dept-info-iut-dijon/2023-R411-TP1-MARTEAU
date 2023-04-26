@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b){
-                    storageDao.ReadTasks().taches = tasklist.getTaches();
+                    storageDao.setTasks(tasklist.getTaches());
                     adapter.notifyDataSetChanged();
                 }
             }
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             @RequiresApi(api = Build.VERSION_CODES.N)
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b){
-                    storageDao.ReadTasks().taches = tasklist.getTaskOrdered("titre");
+                    storageDao.setTasks(tasklist.getTaskOrdered("titre"));
                     adapter.notifyDataSetChanged();
                 }
             }
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             @RequiresApi(api = Build.VERSION_CODES.N)
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b){
-                    storageDao.ReadTasks().taches = tasklist.getTaskOrdered("rate");
+                    storageDao.setTasks(tasklist.getTaskOrdered("rate"));
                     adapter.notifyDataSetChanged();
                 }
             }
