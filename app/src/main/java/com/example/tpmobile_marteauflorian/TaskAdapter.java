@@ -105,9 +105,11 @@ public class TaskAdapter extends ArrayAdapter<Task>
                 if (b) {
                     task.setCompleted(true);
                     holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-                    holder.completed.setVisibility(View.INVISIBLE);
+                    holder.priority.setVisibility(View.INVISIBLE);
                 } else {
                     task.setCompleted(false);
+                    holder.priority.setVisibility(View.VISIBLE);
+                    
                 }
 
                 // Mise à jour des données
