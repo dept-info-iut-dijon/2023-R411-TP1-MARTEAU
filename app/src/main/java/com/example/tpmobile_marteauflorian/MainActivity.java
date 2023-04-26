@@ -1,8 +1,10 @@
 package com.example.tpmobile_marteauflorian;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,10 +14,9 @@ import android.widget.ListView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemLongClickListener {
 
     /**
      * Adapter pour lier la listview aux tâches
@@ -79,6 +80,8 @@ public class MainActivity extends AppCompatActivity  {
             }
         });
 
+        listView.setOnItemLongClickListener(this::onItemLongClick);
+
 
 
 
@@ -110,7 +113,20 @@ public class MainActivity extends AppCompatActivity  {
     }
 
 
-
-
+    @Override
+    public boolean onItemLongClick(AdapterView<?> adapterView, View view, final int i, long l) {
+        AlertDialog.Builder dlgAlert = new AlertDialog.Builder(this);
+        dlgAlert.setTitle("Valider la suppression");
+        dlgAlert.setMessage("Supprimer la tâche "+adapter.getItem(i).getTitle()+ " ?");
+        dlgAlert.setPositiveButton("OK",new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialog, int position) {
+                adapter.remove(taches.get(i));
+            }
+        } );
+        dlgAlert.setCancelable(true);
+        dlgAlert.setNegativeButton("Annuler", null);
+        dlgAlert.create().show();
+        return true;
+    }
 
 }

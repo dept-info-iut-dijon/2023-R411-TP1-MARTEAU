@@ -49,4 +49,9 @@ public class FakeStorageDAO implements IStorageTasks {
     public void UpdateTask(Task task) {
 
     }
+
+    @Override
+    public void DeleteTask(Task task) {
+
+    }
 }
